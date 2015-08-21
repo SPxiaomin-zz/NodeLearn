@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Session Management in NodeJS using Express4.x</title>
+        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+        $(document).ready( function() {
+            var email, pass;
+            $("#submit").click( function() {
+                email = $("#email").val();
+                pass = $("#password").val();
+
+                $.post("/login", { email: email, pass: pass }, function( data ) {
+                    if ( data == 'done' ) {
+                        window.location.href = "http://localhost:3000/admin";
+                    }
+                });
+            });
+        });
+        </script>
+    </head>
+
+    <body>
+        <input type="email" size="40" placeholder="Type your email" id="email"><br />
+        <input type="password" size="40" placeholder="Type your password" id="password"><br />
+        <input type="button" value="Submit" id="submit">
+    </body>
+</html>
