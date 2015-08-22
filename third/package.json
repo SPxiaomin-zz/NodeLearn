@@ -1,11 +1,12 @@
 {
-    "name": "Node-Express4-Session",
-    "version": "0.0.1",
-    "main": "server.js",
-    "dependencies": {
-        "body-parser": "*",
-        "ejs": "*",
-        "express": "*",
-        "express-session": "*"
-    }
+  "name": "Node-Express4-Session",
+  "version": "0.0.1",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "*",
+    "connect-mongo": "^0.8.2",
+    "ejs": "*",
+    "express": "*",
+    "express-session": "*"
+  }
 }
