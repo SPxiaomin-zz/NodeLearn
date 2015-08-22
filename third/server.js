@@ -1,14 +1,21 @@
 var express = require('express')
 var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
 var app = express();
 
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 
-app.use(session({secret: 'secret'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(session({
+    secret: 'secret',
+    store: new MongoStore({
+        db: 'sm'
+    })
+}));
 
 var sess;
 
